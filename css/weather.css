@@ -1,0 +1,86 @@
+body {
+	font-family: 'Open Sans', 'Raleway', sans-serif;
+	font-size: 16px;
+	color: #222222;
+	background-color: #EFEFEF;
+}
+.panel {
+	background-color: #fff;
+	opacity: 0.9;
+	border-radius: 2px;
+	box-shadow:  0px 3px 6px rgba(0, 0, 0, 0.4);
+	height: 90%;
+	width: 50%;
+	max-width: 500px;
+	margin: 10% 10% auto;
+	padding: 0px;
+	float: left;
+	text-align: center;
+}
+@media (max-width: 550px) {
+	.panel {
+		width: 90%;
+	}
+}
+.hide {
+	display: none;
+}
+.top {
+	background: #111;
+	padding: 10px;
+	color: #EFEFEF;
+}
+.iconBox {
+	padding: 10px;
+}
+.fa, .icon, .iconBox {
+	font-size: 3rem;
+	line-height: 3rem;
+}
+button {
+	color: #111;
+	font-weight: 500;
+}
+.location {
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+.slider {
+	position: relative;
+	text-align: center;
+	height: 200px;
+	margin-top: 20px;
+}
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.infoSun, .infoMoon {
+	font-weight: bold;
+	font-size: 3rem;
+}
+@media (max-width: 550px) {
+	.infoSun, .infoMoon {
+	font-weight: bold;
+	font-size: 2.5rem;
+	}
+}
+.weatherFah, .weatherCel {
+	font-size: 6em;
+}
+.nav {
+	font-size: 1rem;
+	padding: 20px 0px;
+	background: #111;
+	margin-right: 0;
+	margin-left: 0;
+}
+.nav .fa {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+.nav-link {
+	display: block;
+}

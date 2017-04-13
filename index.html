@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Vicky's Weather App'">
+
+<title>Very Handy Weather App</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/js/unsplash-source.js"></script>
+<script type="text/javascript" src="/js/weather.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lobster|Open+Sans|Pacifico|Raleway">
+<link rel="stylesheet" href="/css/weather.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+	<div class="panel"><!-- Floating panel start -->
+		
+<!-- Top header start -->
+		<div class="top">
+		<!-- Weather icons start -->
+				<div class="iconBox">
+				<span class="icon clear-day hide"><i class="fa fa-sun-o"></i></span>
+				<span class="icon clear-night hide"><i class="fa fa-moon-o"></i></span>
+				<span class="icon rain hide"><i class="fa fa-tint"></i></span>
+				<span class="icon snow hide"><i class="fa fa-snowflake-o"></i></span>
+				<span class="icon sleet hide"><i class="fa fa-tint"></i><i class="fa fa-snowflake-o"></i></span>
+				<span class="icon wind hide"><i class="fa fa-"></i></span>
+				<span class="icon fog hide"><i class="fa fa-soundcloud"></i></span>
+				<span class="icon cloudy hide"><i class="fa fa-cloud"></i></span>
+				<span class="icon partly-cloudy-day hide"><i class="fa fa-cloud"></i><i class="fa fa-sun-o"></i></span>
+				<span class="icon partly-cloudy-night hide"><i class="fa fa-"></i><i class="fa fa-moon-o"></i></span>
+				</div><!-- End weather icons -->
+		
+		<!-- Location -->
+				<div class="location">
+					<span id="city"></span>, <span id="country"></span>
+				</div><!-- End location -->
+		</div><!-- Top header end -->
+
+<!-- Nav row start -->
+		<div class="nav row">
+			<div class="col nav-link"><button id="showFah">°F</button></div>
+			<div class="col nav-link"><button id="showCel">°C</button></div>
+			<div class="col nav-link"><button id="showSun"><i class="fa fa-sun-o"></i></button></div>
+			<div class="col nav-link"><button id="showMoon"><i class="fa fa-moon-o"></i></button></div>
+		</div><!-- Nav end -->
+		
+<!-- Following divs will slide in when selected -->		
+	<div class="slider">
+		<div class="weatherFah slide">
+			<span id="tempF"></span>°F
+		</div>
+				
+		<div class="weatherCel slide hide">			
+			<span id="tempC"></span>°C
+		</div>
+				
+		<div class="infoSun slide hide">			
+			<p>Sunrise: <span id="sunRise"></span></p>
+			<p>Sunset: <span id="sunSet"></span></p>
+		</div>
+	
+		<div class="infoMoon slide hide">			
+			<p>Moon phase:</p>
+			<p><span id="moonPhase"></span></p>
+		</div>
+	</div>
+	</div><!-- End floating panel -->
+</div>
+
+</body>
