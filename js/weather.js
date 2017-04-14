@@ -5,31 +5,72 @@ $.getJSON('http://ip-api.com/json',
 	
 function(loc) {
 	// Declare some vars
-  var city = loc.city;
+  	var city = loc.city;
 	var country = loc.countryCode;
 	var	lat = loc.lat;
 	var lon = loc.lon;
 	var apiURL = 'https://api.darksky.net/forecast/edd4f443633485f2acb4dde45db59e1e/'.concat(loc.lat + ',' + loc.lon);
-	
+
 	$('#city').html(loc.city);
 	$('#country').html(loc.countryCode);
 
+// Let's try!
+var xhr = new XMLHttpRequest();
+xhr.open('GET', "https://source.unsplash.com/all/random?"+'saldkf', true);
+xhr.send();
+
+xhr.onreadystatechange = processRequest;
+
+function processRequest() {
+	if (xhr.readyState == 4 && xhr.status == 200) {
+		var photoURL = xhr.responseURL;
+		console.log(photoURL);
+
+		var notFound = 'photo-1446704477871-62a4972035cd'
+		if (photoURL.includes(notFound)) {
+			document.body.style.background = 'url(https://source.unsplash.com/random) no-repeat center center fixed';
+			document.body.style.backgroundSize = 'cover';
+		} else {
+			document.body.style.background = 'url('+photoURL+') no-repeat center center fixed'; // kinda wrong because it goes and gets a photo again
+			document.body.style.backgroundSize = 'cover';
+		}
+	}
+}
+
+/*
 // Get background photo from Unsplash
-var photo = new UnsplashPhoto();
+function getBackground() {
+	var photo = new UnsplashPhoto();
+		photo.all()
+		.of('difkl')
+		.fetch();
+	
+	var bgURL = photo.url;
 
-photo.all()
-     .of(city)
-     .fetch();
-	 
-var bgpic = photo.url;
+function placeBackground() {
+// If UnsplashPhoto not found, an image with this in the URL is returned: photo-1446704477871-62a4972035cd
+// If the returned image has this in the URL, use this URL instead: https://source.unsplash.com/random
+	if (theReturnedPhoto.includes("photo-1446704477871-62a4972035cd")) {
+		document.body.style.background = 'url(https://source.unsplash.com/random) no-repeat center center fixed';
+		document.body.style.backgroundSize = 'cover';
+	}
+	else {
+		document.body.style.background = 'url('+bgURL+') no-repeat center center fixed';
+		document.body.style.backgroundSize = 'cover';
+	}
+} // end placeBackground
+placeBackground();
+console.log(bgURL);
+}
 
-document.body.style.background = 'url('+bgpic+') no-repeat center center fixed';
-document.body.style.backgroundSize = 'cover';
+// TODO fade in 
+getBackground();
+*/
 
-// Get some JSON 
+// Get some weather info from DarkSky 
 $.ajax({
       type: 'POST',
-			dataType:'jsonp',
+	  dataType:'jsonp',
       url: apiURL,
       crossDomain: true,
       cache: false,
@@ -125,7 +166,7 @@ $.ajax({
 			} //end success
 }); //end ajax DarkSky
 }); //end json ip-api
-}; //end getWeather
+}; //end big function getWeather
 
 // Nav functions
 $(function(){
@@ -158,15 +199,9 @@ $(function(){
 	});
 });
 
-// Helps the tweet button
-// function openURL(url){
-//	window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0'); }
 
 $(document).ready(function() {
-	// Stuff that happens when the page loads 
+	// Call big function when the page loads 
 	getWeather();
 	
-	// Helps button id=tweet to load a twitter share window
-	//  $('#tweet').on('click', function() {
-	//	openURL('https://twitter.com/intent/tweet?text=' + encodeURIComponent('string ' + variable + ' #freecodecamp'))});
 });
