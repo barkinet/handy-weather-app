@@ -1,5 +1,8 @@
+html {
+  height: 100%;
+}
 body {
-
+	min-height: 100%;
 	font-family: 'Open Sans', 'Raleway', sans-serif;
 	font-size: 16px;
 	color: #222222;
@@ -14,7 +17,6 @@ body {
 	max-width: 500px;
 	margin-top: 10%;
 	margin-left: 10%;
-	margin-bottom: 20%;
 	padding: 0px;
 	float: left;
 	text-align: center;
@@ -115,5 +117,5 @@ button {
 	text-decoration: none;
 }
 .footer .fa {
-	font-size: 0.8rem;
+	font-size: 0.6rem;
 }
