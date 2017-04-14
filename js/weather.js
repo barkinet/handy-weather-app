@@ -14,9 +14,9 @@ function(loc) {
 	$('#city').html(loc.city);
 	$('#country').html(loc.countryCode);
 
-// Let's try!
+// Get background photo of city from Unsplash
 var xhr = new XMLHttpRequest();
-xhr.open('GET', "https://source.unsplash.com/all/random?"+'saldkf', true);
+xhr.open('GET', "https://source.unsplash.com/all/random?"+city, true);
 xhr.send();
 
 xhr.onreadystatechange = processRequest;
@@ -24,48 +24,19 @@ xhr.onreadystatechange = processRequest;
 function processRequest() {
 	if (xhr.readyState == 4 && xhr.status == 200) {
 		var photoURL = xhr.responseURL;
-		console.log(photoURL);
 
 		var notFound = 'photo-1446704477871-62a4972035cd'
 		if (photoURL.includes(notFound)) {
 			document.body.style.background = 'url(https://source.unsplash.com/random) no-repeat center center fixed';
 			document.body.style.backgroundSize = 'cover';
 		} else {
-			document.body.style.background = 'url('+photoURL+') no-repeat center center fixed'; // kinda wrong because it goes and gets a photo again
+			document.body.style.background = 'url('+photoURL+') no-repeat center center fixed';
 			document.body.style.backgroundSize = 'cover';
 		}
 	}
 }
 
-/*
-// Get background photo from Unsplash
-function getBackground() {
-	var photo = new UnsplashPhoto();
-		photo.all()
-		.of('difkl')
-		.fetch();
-	
-	var bgURL = photo.url;
-
-function placeBackground() {
-// If UnsplashPhoto not found, an image with this in the URL is returned: photo-1446704477871-62a4972035cd
-// If the returned image has this in the URL, use this URL instead: https://source.unsplash.com/random
-	if (theReturnedPhoto.includes("photo-1446704477871-62a4972035cd")) {
-		document.body.style.background = 'url(https://source.unsplash.com/random) no-repeat center center fixed';
-		document.body.style.backgroundSize = 'cover';
-	}
-	else {
-		document.body.style.background = 'url('+bgURL+') no-repeat center center fixed';
-		document.body.style.backgroundSize = 'cover';
-	}
-} // end placeBackground
-placeBackground();
-console.log(bgURL);
-}
-
 // TODO fade in 
-getBackground();
-*/
 
 // Get some weather info from DarkSky 
 $.ajax({
