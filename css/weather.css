@@ -42,7 +42,7 @@ body {
 .iconBox {
 	padding: 10px;
 }
-.fa, .icon, .iconBox {
+.icon, .iconBox {
 	font-size: 3rem;
 	line-height: 3rem;
 }
@@ -73,17 +73,20 @@ button {
 	width: 100%;
 }
 .infoSun, .infoMoon {
-	font-weight: bold;
-	font-size: 3rem;
+	font-weight: 300;
+	font-size: 2rem;
 }
 @media (max-width: 550px) {
 	.infoSun, .infoMoon {
-	font-weight: bold;
-	font-size: 2.5rem;
+	font-weight: 300;
+	font-size: 1.5rem;
 	}
 }
-.weatherFah, .weatherCel {
+.big {
 	font-size: 6em;
+}
+.small {
+	font-size: 1.5rem;
 }
 .nav {
 	font-size: 1rem;
@@ -116,6 +119,6 @@ button {
 	color: #EFEFEF;
 	text-decoration: none;
 }
-.footer .fa {
+.footer {
 	font-size: 0.6rem;
 }
