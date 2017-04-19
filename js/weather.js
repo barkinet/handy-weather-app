@@ -57,7 +57,7 @@ if (city == 'Central District') {
 
 // Get some weather info from DarkSky 
 $.ajax({
-		type: 'POST',
+		type: 'GET',
 		dataType:'jsonp',
 		url: apiURL,
 		crossDomain: true,
